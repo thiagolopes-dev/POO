@@ -57,6 +57,21 @@
 // console.log("Personagem >>>" , goku);
 
 //Forma 4 ----------------------------------------------------
+// class Personagem {
+//     constructor() {
+// public nome: string,
+// public energia: number,
+// public ataque: number,
+// public vida: number,
+// public defesa: number
+//     }
+// }
+// goku = new Personagem('Goku 2', 90,80,70,60,50);
+// console.log("Personagem >>>" , goku);
+
+//Forma 5 ----------------------------------------------------
+import prompt from 'prompt-sync';
+
 class Personagem {
     constructor(
         public nome: string,
@@ -67,16 +82,36 @@ class Personagem {
 
     ) { }
 }
+let goku: Personagem = new Personagem('Goku', 10, 20, 30, 40);
+let teclado = prompt();
+let option: number = 0;
 
-let goku: Personagem;
-goku = new Personagem(
-    'Goku', 10,20,30,40
-);
+while (option !== 9) {
+    console.log('===========Personagem============');
+    console.log('1. Treinar Ataque                ');
+    console.log('2. Treinar Defesa                ');
+    console.log('3. Imprimir Atributos            ');
+    console.log('9. Sair                          ');
+    console.log('=================================');
 
-let vegeta: Personagem;
-vegeta = new Personagem(
-    'Vegetta', 90,80,70,60
-);
+    option = +teclado('Ecolha uma ação: ');
 
-console.log("personagem :>>" , goku);
-console.log("personagem :>>" , vegeta);
+    switch (option) {
+        case 1:
+            goku.ataque += 2;
+            break;
+
+        case 2:
+            goku.defesa
+            break;
+
+        case 3:
+            console.log('Personagem >>>', goku);
+            break;
+
+        default:
+            break;
+    }
+}
+
+
