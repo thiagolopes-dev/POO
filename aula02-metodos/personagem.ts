@@ -42,14 +42,23 @@ export class Personagem {
         if (this.energia > 100) {
             this.energia = 100;
         }
+        
     }
     batalhar(): number {
         let percaBatalha: number = Math.random() * 100;
         this.energia -= percaBatalha;
+        this.isDead();
         return percaBatalha;
+        
     }
-    isDead(): boolean {
-       return this.energia < 0;
-    }
+    isDead(){
+       if(this.energia < 0){
+           console.log('Você morreu... 💀');
+       }
+       else {}
+     }
+    // isDead(): boolean {
+    //    return this.energia < 0;
+    // }
 
 }
