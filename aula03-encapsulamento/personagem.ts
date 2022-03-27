@@ -40,6 +40,14 @@ export class Personagem {
         this._defesa = defesa;
     }
 
+    public get vida(): number {
+        return this._vida;
+    }
+
+    public set vida(vida: number) {
+        this._vida = vida;
+    }
+
     status(): string {
         return (
             "Guerreiro: 🧙 \n" +
@@ -51,23 +59,23 @@ export class Personagem {
         );
     }
     treinarAtaque(): void {
-        this.ataque += Math.random() * 7;
-        this.energia -= Math.random() * 6;
+        this.ataque += this.randomizar(7);
+        this.energia -= this.randomizar(6);
         if (this.defesa >= 100) {
             this.aviso();
         }
         this.isDead();
     }
     treinarDefesa(): void {
-        this.defesa += Math.random() * 5;
-        this.energia -= Math.random() * 6;
+        this.defesa += this.randomizar(5);
+        this.energia -= this.randomizar(6);
         if (this.defesa > 100) {
             this.aviso();
         }
         this.isDead();
     }
     descansar(horas: number): void {
-        this.energia += horas * (Math.random() * 8);
+        this.energia += horas * this.randomizar(8);
         if (this.energia >= 100) {
             this.energia = 100;
             this.aviso();
@@ -75,7 +83,7 @@ export class Personagem {
         this.isDead();
     }
     batalhar(): number {
-        let percaBatalha: number = Math.random() * 10;
+        let percaBatalha: number = this.randomizar(10);
         this.energia -= percaBatalha;
         this.isDead();
         return percaBatalha;
@@ -90,5 +98,8 @@ export class Personagem {
     }
     aviso() {
         console.log('Você excedeu o limite');
+    }
+   private randomizar(fator: number): number {
+        return (Math.random() * fator);
     }
 }

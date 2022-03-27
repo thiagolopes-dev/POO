@@ -1,19 +1,25 @@
 import { Personagem } from "./personagem";
 import prompt from 'prompt-sync';
 
-let person: Personagem = new Personagem('Goku', 10, 20, 30, 40);
+let person: Personagem = new Personagem('Goku', 10, 20, 30, 5);
 let teclado = prompt();
 let option: number = 0;
-console.log(person);
+
+// Apresenta nosso objeto/personagem iniciando jogo com seus valores nos atributos
+console.log(`Personagem: 🧙 ${person.nome}`);
+console.log(`Energia: 🔌 ${person.energia}`);
+console.log(`Ataque 🗡️: ${person.ataque}`);
+console.log(`Defesa 🛡️: ${person.defesa}`);
+console.log(`Vida: 🏋️ ${person.vida}`);
 
 while (option !== 9) {
-    console.log('===========Personagem============');
+    console.log(`==============Menu===============`);
     console.log('1. Treinar Ataque     🗡️         ');
     console.log('2. Treinar Defesa     🛡️         ');
     console.log('3. Descansar          🧙         ');
     console.log('4. Entrar em Batalha  🔫         ');
     console.log('9. Sair               👉         ');
-    console.log('=================================+');
+    console.log('=================================');
 
     option = +teclado('Ecolha uma ação 😁: ');
 
