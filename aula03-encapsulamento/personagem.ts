@@ -1,76 +1,94 @@
 export class Personagem {
     constructor(
         private _nome: string,
-        private energia: number,
-        private ataque: number,
-        private defesa: number,
-        private vida: number
+        private _energia: number,
+        private _ataque: number,
+        private _defesa: number,
+        private _vida: number
 
     ) { }
 
-    public get nome() : string {
-        return  this._nome;
+    public get nome(): string {
+        return this._nome;
     }
 
-    
-    public set nome(nome : string) {
+    public set nome(nome: string) {
         this._nome = nome;
     }
-    
-    
-    // Toda vez que pensar em leitura de dados na classe - use parametros
 
-    // Toda vez que pensar em imprimir na classe, use retorno
+    public get energia(): number {
+        return this._energia;
+    }
 
-    public status(): string {
+    public set energia(energia: number) {
+        this._energia = energia;
+    }
+
+    public get ataque(): number {
+        return this._ataque;
+    }
+
+    public set ataque(ataque: number) {
+        this._ataque = ataque;
+    }
+
+    public get defesa(): number {
+        return this._defesa;
+    }
+
+    public set defesa(defesa: number) {
+        this._defesa = defesa;
+    }
+
+    status(): string {
         return (
-            "Guerreiro:  \n" +
+            "Guerreiro: 🧙 \n" +
             "\nNome: " +
             this.nome +
-            ("\nEnergia: " + this.energia.toFixed(1)) +
-            ("\nAtaque: " + this.ataque.toFixed(1)) +
-            ("\nDefesa: " + this.defesa.toFixed(1))
+            ("\nEnergia:🔌 " + this.energia.toFixed(1)) +
+            ("\nAtaque: 🗡️ " + this.ataque.toFixed(1)) +
+            ("\nDefesa: 🛡️" + this.defesa.toFixed(1))
         );
     }
-    public treinarAtaque(): void {
-        this.ataque += this.randomizar(5);
-        this.energia -= this.randomizar(10);
-        if (this.defesa > 100) {
-            this.defesa = 0;
+    treinarAtaque(): void {
+        this.ataque += Math.random() * 7;
+        this.energia -= Math.random() * 6;
+        if (this.defesa >= 100) {
+            this.aviso();
         }
+        this.isDead();
     }
-    public treinarDefesa(): void {
-        this.defesa += this.randomizar(8);
-        this.energia -= this.randomizar(7);
+    treinarDefesa(): void {
+        this.defesa += Math.random() * 5;
+        this.energia -= Math.random() * 6;
         if (this.defesa > 100) {
-            this.defesa = 0;
+            this.aviso();
         }
+        this.isDead();
     }
-    public descansar(horas: number): void {
-        this.energia += horas * this.randomizar(5);
-        if (this.energia > 100) {
+    descansar(horas: number): void {
+        this.energia += horas * (Math.random() * 8);
+        if (this.energia >= 100) {
             this.energia = 100;
+            this.aviso();
         }
-
+        this.isDead();
     }
-    public batalhar(): number {
-        let percaBatalha: number = this.randomizar(10);
+    batalhar(): number {
+        let percaBatalha: number = Math.random() * 10;
         this.energia -= percaBatalha;
         this.isDead();
         return percaBatalha;
 
     }
-    public isDead() {
-        if (this.energia < 0) {
-            console.log('Você morreu... 💀');
+    isDead() {
+        if (this.energia <= 0) {
+            this.energia = 0;
+            console.log('Você morreu 💀');
         }
         else { }
     }
-    private randomizar(fator: number): number {
-        return Math.random() * fator;
+    aviso() {
+        console.log('Você excedeu o limite');
     }
-    // isDead(): boolean {
-    //    return this.energia < 0;
-    // }
-
 }
