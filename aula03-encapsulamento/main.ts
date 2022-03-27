@@ -7,7 +7,7 @@ let option: number = 0;
 console.log(person);
 
 while (option !== 9) {
-    console.log(`===========Personagem ${person.nome}============`);
+    console.log('===========Personagem============');
     console.log('1. Treinar Ataque     🗡️         ');
     console.log('2. Treinar Defesa     🛡️         ');
     console.log('3. Descansar          🧙         ');
@@ -15,7 +15,7 @@ while (option !== 9) {
     console.log('9. Sair               👉         ');
     console.log('=================================+');
 
-    option = +teclado('Ecolha uma ação: ');
+    option = +teclado('Ecolha uma ação 😁: ');
 
     switch (option) {
         case 1:
@@ -27,13 +27,13 @@ while (option !== 9) {
             console.log(person.status());
             break;
         case 3:
-            let horas: number = +teclado('Digite o número de horas: ');
+            let horas: number = +teclado('Digite o número de horas:⌛');
             person.descansar(horas);
             console.log(person.status());
             break;
         case 4:
             let rest: number = person.batalhar();
-            console.log(`Esta batalha custou ${rest.toFixed()} de energia`);
+            console.log(`Esta batalha custou ${rest.toFixed()} de energia 🔌`);
             console.log(person.status());
             break;
         default:
