@@ -1,7 +1,7 @@
 import { Personagem } from "./personagem";
 import { Util } from "./util";
 
-export class Sacedorte extends Personagem {
+export class Sacerdote extends Personagem {
     private _espirito: number;
     private _versatilidade: number;
     constructor(nome: string) {
