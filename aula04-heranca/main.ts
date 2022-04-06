@@ -6,7 +6,12 @@ import { Sacerdote } from "./sacerdote";
 let mago: Personagem = new Mago("Gandalf Mago");
 let guerreiro: Personagem = new Guerreiro("Aragorn Guerreiro");
 let sacerdote: Personagem = new Sacerdote("Bilbo Sacerdote");
+let personagem: Personagem = new Personagem("Personagem");
 
-console.log("Mago 🧙", mago);
-console.log("Guerreiro 🗡️", guerreiro);
-console.log("Sacerdote 👲", sacerdote);
+console.log(mago.status());
+console.log('=============================');
+console.log(sacerdote.status());
+console.log('=============================');
+console.log(guerreiro.status());
+console.log('=============================');
+console.log(sacerdote.status());
