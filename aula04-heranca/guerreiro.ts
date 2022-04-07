@@ -8,11 +8,19 @@ export class Guerreiro extends Personagem {
 
     constructor(nome: string) {
         super(nome);
-        this._armadura = +Util.randomizar(1_000, 10_000).toFixed(1);
-        this._vidaMaxima = +Util.randomizar(200, 10_000).toFixed(1);
-        this._vidaAtual = +Util.randomizar(20, this._vidaMaxima).toFixed(1);
-        this._vidaAtual = 100;
         this._forca = +Util.randomizar(100, 1_000).toFixed(1);
         this._agilidade = +Util.randomizar(100, 1_000).toFixed(1);
+    }
+    status(): string {
+        return (
+            "Personagem: 🗡️ \n" +
+            "\nNome: " +
+            this._nome +
+            ("\nEnergia:🔌 " + this._armadura.toFixed(1)) +
+            ("\nAtaque: 🗡️ " + this._vidaMaxima.toFixed(1)) +
+            ("\nDefesa: 🛡️ " + this._vidaAtual.toFixed(1)) +
+            ("\nForça: 🛡️ " + this._forca.toFixed(1)) +
+            ("\nAgilidade: 🛡️ " + this._agilidade.toFixed(1))
+        );
     }
 }
