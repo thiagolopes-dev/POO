@@ -28,7 +28,7 @@ export class Controle {
 
     turbo(): void {
         this.velocidadeatual += Math.random() * 20;
-        console.log(this.velocidadeatual);
+        console.log(this.velocidadeatual.toFixed(1));
         if (this.velocidadeatual > this.velocidadepermitida) {
             console.log('Levou uma multa!');
         }
@@ -40,10 +40,4 @@ export class Controle {
             ("\nVelocidade Permitida:" + this.velocidadepermitida.toFixed(1))
         );
     }
-  // velocidadeAtual(): string {
-    //     console.log(this.velocidadeatual);
-    //     return (
-    //         ("Velocidade atual: " + this.velocidadeatual.toFixed(1))
-    //     );
-    // }
 }
