@@ -21,7 +21,6 @@ Exemplo de POO utilizando Typescript.
 ## Instalação
 
 Instale poo com npm
-
 ```bash
   npm install
   cd poo
