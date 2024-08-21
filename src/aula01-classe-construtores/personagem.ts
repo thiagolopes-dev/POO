@@ -1,3 +1,20 @@
+class Personagem {
+    nome: string = '';
+    energia = 0;
+    ataque = 0;
+    vida = 0;
+    defesa = 0;
+}
+let goku: Personagem;
+goku = new Personagem();
+goku.nome = 'Goku';
+goku.energia = 100;
+goku.ataque = 90;
+goku.vida = 80;
+goku.defesa = 70;
+console.log("Personagem >>>" , goku);
+
+
 //Forma 2 ----------------------------------------------------
 // class Personagem {
 //     nome: string = '';
@@ -52,18 +69,3 @@
 // console.log("Personagem >>>" , goku);
 
 
-class Personagem {
-    nome: string = '';
-    energia = 0;
-    ataque = 0;
-    vida = 0;
-    defesa = 0;
-}
-let goku: Personagem;
-goku = new Personagem();
-goku.nome = 'Goku';
-goku.energia = 100;
-goku.ataque = 90;
-goku.vida = 80;
-goku.defesa = 70;
-console.log("Personagem >>>" , goku);
