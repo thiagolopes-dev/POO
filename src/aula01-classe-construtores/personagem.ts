@@ -1,7 +1,7 @@
 class Personagem {
     nome: string = '';
-    energia = 0;
-    ataque = 0;
+    energia: number = 0;
+    ataque: number = 0;
     vida = 0;
     defesa = 0;
 }
